@@ -19,11 +19,12 @@ public class ChatbottestApplication {
 
 	@Bean
 	ApplicationRunner beanDebugger(ApplicationContext context) {
-		return args -> {
+		ApplicationRunner applicationRunner = args -> {
 			Map<String, Object> beans = new TreeMap<>(context.getBeansOfType(Object.class));
 			// 🔴 PUT BREAKPOINT HERE
 			System.out.println("Total beans: " + beans.size());
 		};
+		return applicationRunner;
 	}
 
 
